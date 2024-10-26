@@ -1,0 +1,105 @@
+.forum-intro
+{
+    padding: 1vh 3vw;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: -1px 3px 11px -4px rgba(63, 48, 48, 0.5);
+}
+
+body
+{
+    background-image: url("../Images/forum-background.svg");
+    background-size: 10em;
+}
+
+.card-title
+{
+    font-family: 'Merriweather Sans', sans-serif;
+    text-align: center;
+}
+
+#mundo-card
+{
+    background-color: blue;
+}
+
+#libre-card
+{
+    background-color: rgb(248, 136, 0);
+}
+
+#salud-card
+{
+    background-color: green;
+}
+
+#estudios-card
+{
+    background-color: rgb(55, 0, 156);
+}
+
+@media screen and (max-width: 350px)
+{
+    #estudios-card .card-title
+    {
+        font-size: .95em;
+    }
+}
+
+.forum-topics
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: auto;
+    padding: 20px;
+}
+
+.forum-topic
+{
+    color: white;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 5px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 1040px) {
+    .forum-topic
+    {
+        width: 100%;
+    }
+}
+
+.topic-description
+{
+    font-size: .9em;
+}
+
+.forum-intro-title
+{
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+
+.card-content
+{
+    display: inherit;
+    flex-direction: inherit;
+    align-items: inherit;
+    padding: 10px 30px;
+}
+
+.type-amount
+{
+    background-color: rgba(0, 0, 0, 0.35);
+    font-weight: bold;
+    padding: .4em 0;
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+}

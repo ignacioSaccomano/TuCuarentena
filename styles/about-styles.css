@@ -1,0 +1,139 @@
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.about-section
+{
+    display: flex;
+    margin-top: var(--header-height);
+    flex-direction: column;
+    align-items: center;
+    width: 70%; 
+    margin: 5em auto 1em;
+    padding: 2em 1.5em;
+}
+
+@media screen and (max-width: 620px)
+{
+    .about-section{
+        width: 95%;
+    }
+}
+
+.article-title
+{
+    font-size: 3em;
+}
+
+.article
+{
+    width: 100%;
+
+}
+
+a
+{
+    color: rgb(29, 170, 170);
+}
+
+.about-text
+{
+    text-indent: .5em;
+    font-size: 1.1em;
+    color: rgb(61, 61, 61);
+}
+
+.about-title
+{
+    /* font-size: 1.8em; */
+    letter-spacing: -1px;
+    margin-bottom: .5em;
+}
+
+.about-title-wrapper
+{
+    padding: 0;
+    border-bottom: 1px solid grey;
+}
+
+.about-head
+{
+    position: fixed;
+    width: 100%;
+}
+
+.hero-card
+{
+    float: left;
+    margin: 1em 2em;
+    box-shadow: 2px -1px 8px -2px rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;
+    padding: 2em 1em;
+    align-items: center;
+}
+
+strong
+{
+    color: black;
+}
+
+.collaborator-cards
+{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+    margin: 2em 1em;
+    text-align: center;
+}
+
+.hero-card-image-wrapper
+{
+    width: 10em;
+}
+
+.hero-card-image
+{
+    width: inherit;
+}
+
+.hero-role
+{
+    font-size: .8em;
+    background-color: rgb(0, 185, 185);
+    padding: .2em .5em;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.hero-card-wrapper{
+    display: inherit;
+    justify-content: space-around;
+    flex-wrap: inherit;
+    overflow-x: inherit;
+}
+
+@media screen and (max-width: 620px)
+{
+    .collaborator-cards
+    {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+    .hero-card-wrapper
+    {
+        justify-content: flex-start;
+    }
+    .hero-card
+    {
+        margin: 0;
+    }
+}

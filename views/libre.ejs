@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"">
+    <link rel="stylesheet" href="../styles/posts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&display=swap" rel="stylesheet">
+    <title>Comentarios de tema libre</title>
+</head>
+<body>
+    <header class="topic-header">
+        <h1 class="topic-title"> <a class="topic-link" href="/forum">Libre</a></h1>
+        <p class="topic-description">
+            Lo que se te ocurra
+        </p>
+    </header>
+    <form name="postForm" class="topic-form" method="post" onsubmit="return validatePosts();" action="/setLibre">
+        <textarea class="post-write" type="text"
+            name="post" placeholder="Poné lo que quieras" cols="50" rows="4" minlength="10" maxlength="450" required></textarea>
+        <button type="submit" class="post-send">👌</button>
+    </form>
+    <hr class="page-divider">
+    <section class="topic-forum">
+        <% for(let i = 0; i < posts.length; i++) { %>
+            <div class="answer-wrapper-hidden">
+                <% var respuesta = respuestas.filter(el=>parseInt(el.post_bond) == posts[i].id_post); %>
+                <% if(respuesta == 0) { %>
+                    <p class="encourage-text">Sin respuestas... ya sabés qué hacer ;)</p>
+                <% } else { %>
+                    <% respuesta.forEach(el => { %>
+                        <div class="answer-container post-container">
+                            <p class="post-text"><%- el.respuesta %></p>
+                            <figure class="answer-quotation quotation-wrapper">
+                                <img src="../Images/quotation_mark.png" alt="quotation-cita" class="quotation-image">
+                            </figure>
+                        </div>
+                    <% }) %>
+                <% } %>
+            </div>
+            <div class="post-container">
+                <figure class="quotation-wrapper">
+                    <img src="../Images/quotation_mark.png" alt="quotation-cita" class="quotation-image">
+                </figure>
+                <p class="post-text"><%- posts[i].post %></p>
+                <form name="answerForm" class="answer-form topic-form" onsubmit="return validateAns('<%= i  %>');" method="post" action="/setAnswerLibre">
+                    <textarea class="answer-write post-write" type="text"
+                    name="answer" placeholder="Respondé acá..." cols="40" rows="4" minlength="10" maxlength="450" required></textarea>
+                    <input type="hidden" value="<%= posts[i].id_post%>" name="idBond"></input>
+                    <button type="submit" class="answer-send post-send">Enviar</button>
+                </form>
+                <button class="respond-button">RESPONDER</button>
+                <button class="thread-button">VER RESPUESTAS</button>
+            </div>
+        <% } %>
+        <% if(posts.length == 0) { %>
+            <div class="encourage-container">
+                <p class="encourage-emoji">🤔</p>
+                <p class="encourage-text">No hay nada... por ahora. Podés ser la primera persona en escribir!</p>
+            </div>
+        <% } %>
+    </section>
+    <script src="../scripts/evil-checker.js"></script>
+    <script src="../scripts/responses.js"></script>
+</body>
+</html>

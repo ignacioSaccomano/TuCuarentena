@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="foro, opiniones, psicología, terapia, comunidad">
+    <meta name="author" content="Ignacio Saccomano">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/forum-styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" href="Images/brains.png">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&display=swap" rel="stylesheet">
+    <title>Foro</title>
+</head>
+
+<body>
+    <header class="head">
+        <a class="head-redirect" href="./index.html"><h1>TuCuarentena</h1></a>
+    </header>
+    <section class="forum-intro">
+        <h1 class="forum-intro-title">Elegí una categoría</h1>
+        <p class="forum-intro-description">
+            Cada categoría sirve para organizar mejor distintos temas para que los hilos
+            de
+            conversación mantengan una mayor coherencia. Si se te ocurre otro no dudes en mandarnos tu sugerencia!
+        </p>
+    </section>
+    <section class="forum-topics">
+        <div id="salud-card" class="forum-topic" onclick="window.location.href='/salud'">
+            <div class="card-content">
+                <h3 class="card-title">🏥 Salud 🏥</h3>
+                <p class="topic-description">
+                    Psicológica y física
+                </p>
+            </div>
+            <span class="type-amount"><%- type.filter(el=>el.type == 'salud').length %> posts</span>
+        </div>
+        <div id="estudios-card" class="forum-topic" onclick="window.location.href='/estudios-trabajo'">
+            <div class="card-content">
+                <h3 class="card-title">🔬Estudios y trabajo🔬</h3>
+                <p class="topic-description">
+                    ¿Cómo manejas tu vida laboral y/o académica?
+                </p>
+            </div>
+            <span class="type-amount"><%- type.filter(el=>el.type == 'estudios').length %> posts</span>
+        </div>
+        <div id="libre-card" class="forum-topic" onclick="window.location.href='/libre'">
+            <div class="card-content">
+                <h3 class="card-title">🗽Tema libre🗽</h3>
+                <p class="topic-description">
+                    Lo que sea que no esté dentro de las otras categorías
+                </p>
+            </div>
+            <span class="type-amount"><%- type.filter(el=>el.type == 'libre').length %> posts</span>
+        </div>
+        <div id="mundo-card" class="forum-topic" onclick="window.location.href='/mundo'">
+            <div class="card-content">
+                <h3 class="card-title">🌎 Mundo 🌎</h3>
+                <p class="topic-description">
+                    ¿Qué era y qué será del mundo?
+                </p>
+            </div>
+            <span class="type-amount"><%- type.filter(el=>el.type == 'mundo').length %> posts</span>
+        </div>
+    </section>
+    <div class="footer-wrapper">
+        <section class="contact-section">
+            <div class="contact-wrapper">
+                <h4 class="contact-title">¿Preguntas o aportes?</h4>
+                <p class="contact-reference">
+                    Contactanos a <a class="contact-mail" href="mailto:gabibrog2002@gmail.com">nuestro mail</a>.
+                </p>
+            </div>
+        </section>
+        <footer class="copyright">
+            <p class="copyright-message">
+                Hecho con ❤ por <a href="./creadores/saccomano.html">Ignacio Saccomano</a> & 
+                <a href="./creadores/brogneri.html">Gabriel Brogneri</a>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
